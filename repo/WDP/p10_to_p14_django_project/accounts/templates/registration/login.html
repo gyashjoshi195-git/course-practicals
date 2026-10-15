@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="card shadow-sm mx-auto" style="max-width:420px"><div class="card-body">
+    <h3>Login</h3>
+    <form method="post">
+        {% csrf_token %}   {# CSRF protection: form is rejected (403) without this token #}
+        {{ form.as_p }}
+        <button class="btn btn-primary w-100">Login</button>
+    </form>
+    <a class="d-block mt-3" href="{% url 'signup' %}">Create an account</a>
+</div></div>
+{% endblock %}

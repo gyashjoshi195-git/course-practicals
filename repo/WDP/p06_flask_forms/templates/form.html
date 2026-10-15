@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="card shadow-sm"><div class="card-body">
+    <h3 class="card-title mb-3">Contact Form</h3>
+    <form method="POST" action="{{ url_for('contact') }}">
+        <div class="mb-3">
+            <label class="form-label">Name</label>
+            <input type="text" name="name" class="form-control" value="{{ form.get('name', '') }}">
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Email</label>
+            <input type="email" name="email" class="form-control" value="{{ form.get('email', '') }}">
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Message</label>
+            <textarea name="message" rows="4" class="form-control">{{ form.get('message', '') }}</textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div></div>
+{% endblock %}

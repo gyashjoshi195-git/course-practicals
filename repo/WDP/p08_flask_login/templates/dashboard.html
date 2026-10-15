@@ -1,0 +1,8 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="card shadow-sm"><div class="card-body text-center">
+    <h3>Welcome, {{ username }}!</h3>
+    <p>This page is protected. It is only visible when a valid session exists.</p>
+    <a href="{{ url_for('logout') }}" class="btn btn-danger">Logout</a>
+</div></div>
+{% endblock %}
